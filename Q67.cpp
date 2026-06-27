@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int arr1[100], arr2[100];
+    int n1, n2;
+
+    cout << "Enter the number of elements in first array: ";
+    cin >> n1;
+
+    cout << "Enter the elements of first array: ";
+    for (int i = 0; i < n1; i++)
+    {
+        cin >> arr1[i];
+    }
+
+    cout << "Enter the number of elements in second array: ";
+    cin >> n2;
+
+    cout << "Enter the elements of second array: ";
+    for (int i = 0; i < n2; i++)
+    {
+        cin >> arr2[i];
+    }
+
+    cout << "Intersection of arrays: ";
+
+    for (int i = 0; i < n1; i++)
+    {
+        bool found = false;
+
+        for (int j = 0; j < i; j++)
+        {
+            if (arr1[i] == arr1[j])
+            {
+                found = true;
+                break;
+            }
+        }
+
+        if (found)
+            continue;
+
+        for (int j = 0; j < n2; j++)
+        {
+            if (arr1[i] == arr2[j])
+            {
+                cout << arr1[i] << " ";
+                break;
+            }
+        }
+    }
+
+    return 0;
+}
